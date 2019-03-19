@@ -1,0 +1,20 @@
+{
+  "name": "gtk_style",
+  "version": "1.0.0",
+  "description": "style for ala git class",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "node-sass -w sass/ -o stylesheets/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/katebron/ALA_2019.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/katebron/ALA_2019/issues"
+  },
+  "homepage": "https://github.com/katebron/ALA_2019#readme"
+}
