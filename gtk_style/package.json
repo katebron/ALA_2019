@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/katebron/ALA_2019/issues"
   },
-  "homepage": "https://github.com/katebron/ALA_2019#readme"
+  "homepage": "https://github.com/katebron/ALA_2019#readme",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
 }
