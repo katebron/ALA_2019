@@ -5,6 +5,7 @@ body{
 	 margin: auto;
   font-family: sans-serif;
 
+
   #nav{
   	font-size: 10px;
   	color: gray;
@@ -18,7 +19,9 @@ body{
  
   #main{
     margin-top: 0.25em;
-  	line-height: 1.5;
+    line-height: 1.5;
+    font-size: 18px;
+    
 
   	h4{
   		color: #4d4d4d;
@@ -45,13 +48,17 @@ body{
  
   }
   .comic_wrap{
-    float: right;
-    max-width: 40%;
-    margin-left: 3em;
-    .caption{
-      font-size: 0.85em;
-      font-style: italic;
-    }
+    display: none;
+    @media all and (min-width: 1000px){
+        float: right;
+      display: block;
+       max-width: 40%;
+       margin-left: 3em;
+      .caption{
+        font-size: 0.85em;
+        font-style: italic;
+      }
+   }
   }
   
 }
