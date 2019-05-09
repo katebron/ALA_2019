@@ -83,13 +83,13 @@ ul.no-bullets {
   .install .instruct .step {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1em; }
+    margin-bottom: 3em; }
     .install .instruct .step .text {
       margin-left: 0.5em;
       flex-grow: 2;
       min-width: 50%; }
     .install .instruct .step img {
-      margin-left: 1em; }
+      margin-left: 3em; }
 
 .install .example {
   margin: 0.5em 0 !important; }
