@@ -104,4 +104,37 @@ ul.no-bullets{
     font-style: italic;
   }
 }
+//Install page
+.install{
+  .instruct{
+    counter-reset: section; 
+    padding-left: 0;
+    //use counter because flexbox will hide ol numbers
+    .step::before{
+      counter-increment: section;                
+      content: counter(section);  
+    }
+    .step{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1em;
+      .text{
+        margin-left: 0.5em;
+        flex-grow: 2;
+        min-width: 50%;
+      }
+      img{
+        margin-left: 1em;
+      }
+      
+    }
+    
+  }
+  .example{
+    margin: 0.5em 0 !important;
+  }
+  .homebrew{
+    margin-bottom: 1em;
+  }
+}
 
