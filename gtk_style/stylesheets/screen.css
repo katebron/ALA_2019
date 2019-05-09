@@ -75,21 +75,27 @@ ul.no-bullets {
     font-style: italic; }
 
 .install .instruct {
-  counter-reset: section;
   padding-left: 0; }
-  .install .instruct .step::before {
-    counter-increment: section;
-    content: counter(section); }
+  @media all and (min-width: 900px) {
+    .install .instruct {
+      counter-reset: section; }
+      .install .instruct .step::before {
+        counter-increment: section;
+        content: counter(section); } }
   .install .instruct .step {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 3em; }
     .install .instruct .step .text {
-      margin-left: 0.5em;
-      flex-grow: 2;
-      min-width: 50%; }
-    .install .instruct .step img {
-      margin-left: 3em; }
+      margin-bottom: 1em; }
+    @media all and (min-width: 900px) {
+      .install .instruct .step {
+        display: flex;
+        justify-content: space-between; }
+        .install .instruct .step .text {
+          margin-left: 0.5em;
+          flex-grow: 2;
+          min-width: 50%; }
+        .install .instruct .step img {
+          margin-left: 3em; } }
 
 .install .example {
   margin: 0.5em 0 !important; }
