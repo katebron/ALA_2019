@@ -122,6 +122,9 @@ ul.no-bullets{
       .text{
         margin-bottom: 1em;
       }
+      img{
+        max-width: 100%;
+      }
       @media all and (min-width: 900px){
         display: flex;
         justify-content: space-between;
@@ -133,6 +136,7 @@ ul.no-bullets{
         }
         img{
           margin-left: 3em;
+          max-width: none;
         }
       }
     }

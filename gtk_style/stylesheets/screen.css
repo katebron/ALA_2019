@@ -86,6 +86,8 @@ ul.no-bullets {
     margin-bottom: 3em; }
     .install .instruct .step .text {
       margin-bottom: 1em; }
+    .install .instruct .step img {
+      max-width: 100%; }
     @media all and (min-width: 900px) {
       .install .instruct .step {
         display: flex;
@@ -95,7 +97,8 @@ ul.no-bullets {
           flex-grow: 2;
           min-width: 50%; }
         .install .instruct .step img {
-          margin-left: 3em; } }
+          margin-left: 3em;
+          max-width: none; } }
 
 .install .example {
   margin: 0.5em 0 !important; }
