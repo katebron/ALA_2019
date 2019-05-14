@@ -5,14 +5,17 @@ body {
   body img {
     box-shadow: 0 2px 6px 0 lightgrey; }
   body #nav {
-    font-size: 10px;
+    font-size: 12px;
     color: gray;
-    padding: 1em; }
+    padding: 1em 1em 1em 0; }
+    body #nav ul li {
+      margin-bottom: 0.5em; }
   body #header {
     padding-bottom: 0.25em;
     border-bottom: 1px solid gray; }
   body #main {
     margin-top: 0.25em;
+    margin-bottom: 5em;
     line-height: 1.5;
     font-size: 18px; }
     body #main h4 {
@@ -35,6 +38,12 @@ body {
       background: #F0F2F4;
       overflow: auto;
       font-family: monospace; }
+  body .inline-example {
+    padding: 0.25em 0.5em;
+    margin-right: 0.25em;
+    font-size: 80%;
+    font-family: monospace;
+    background: #F0F2F4; }
   body .comic_wrap {
     display: none; }
     @media all and (min-width: 1000px) {
@@ -103,8 +112,8 @@ ul.no-bullets {
 .install .download {
   font-size: smaller; }
 
-.install .example {
-  margin: 0.5em 0 !important; }
-
 .install .homebrew {
   margin-bottom: 1em; }
+
+.install .example, .ssh_set_up .example {
+  margin: 0.5em 0 !important; }

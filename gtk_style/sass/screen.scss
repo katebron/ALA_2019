@@ -9,9 +9,14 @@ body{
     box-shadow: 0 2px 6px 0 lightgrey;
    }
   #nav{
-  	font-size: 10px;
+  	font-size: 12px;
   	color: gray;
-  	padding: 1em;
+    padding: 1em 1em 1em 0;
+    ul{
+      li{
+        margin-bottom: 0.5em;
+      }
+    }
   }
 
   #header{
@@ -21,8 +26,10 @@ body{
  
   #main{
     margin-top: 0.25em;
+    margin-bottom: 5em;
     line-height: 1.5;
     font-size: 18px;
+    
     
 
   	h4{
@@ -52,6 +59,13 @@ body{
       font-family: monospace;
   	}
  
+  }
+  .inline-example{
+    padding: 0.25em 0.5em;
+    margin-right: 0.25em;
+    font-size: 80%;
+    font-family: monospace;
+    background: #F0F2F4;
   }
   .comic_wrap{
     display: none;
@@ -145,12 +159,14 @@ ul.no-bullets{
   .download{
     font-size: smaller;
   }
-  .example{
-    margin: 0.5em 0 !important;
-  }
+  
   .homebrew{
     margin-bottom: 1em;
   }
 
 }
-
+.install, .ssh_set_up{
+  .example{
+    margin: 0.5em 0 !important;
+  }
+}  

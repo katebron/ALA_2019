@@ -1,0 +1,138 @@
+<html>
+<title>Set up SSH & GitHub</title>
+
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="gtk_style/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <link href="gtk_stlye/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+  <!--[if IE]>
+      <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+      -->
+	</head>
+	<body class="ssh_set_up">
+		<div id="nav"><ul class="no-bullets">
+				<li><a href="index.html">Back to "Beginning Git & GitHub": Home</a></li>
+				<li><a href="prep.html">Back to Preparing for the workshop</a></li>
+			</ul></div>
+		<h1 id="header">Set up SSH & GitHub</h1>
+		<div id="main">
+		  <p>In order for us to work with GitHub during class, 
+				you'll need to authenticate the computer you'll use during class with
+				 GitHub. Follow these steps:
+			</p>
+			<h2 id="check">Before you generate a new SSH Key</h2>
+			<p>Check to see if you already have an .ssh directory in your home directory.  
+				If this is the first time working with SSH keys, you probably don’t a .ssh directory.  
+				Note: Directories that start with a dot are usually hidden.  </p>
+
+        <ol>
+					<li>Open Git Bash (or <a href="https://www.idownloadblog.com/2019/04/19/ways-open-terminal-mac/">Terminal</a> if on a Mac)</li>
+<li>	Make sure you’re in your home directory. <br/> Type:
+	<ul>
+		<li><span class="inline-example">cd  ~/</span>	(change to your home directory) 
+ <br/>
+<em>Note: The ~ is the last key to the left of the numbers at the top of your keyboard.
+Press shift + ~ to get the character.</em></li>
+<li><span class="inline-example">ls -a  </span>		(to list directories and files including hidden ones)
+</li></ul>
+If you do not have an .ssh directory, you can skip to the Generating a new SSH Key section just below.</li>
+<li>If you have an .ssh directory, change into that directory to see if you already have SSH keys.  Type the following two commands
+	<ul>
+		<li><span class="inline-example">cd .ssh</span> (switch into the .ssh directory)</li>	
+		 <li><span class="inline-example">ls	</span>	 (list files in that directory)</li></ul>
+
+</li>
+<li>If you have an SSH key in the directory, you can use one of those keys for this class, so you can skip ahead to 
+	<a href="#copy">copying the key to GitHub.</a>  
+	Or you can use the instructions below to generate a new key.  
+	
+	Just use a different name when you save the key in step 2 and anywhere else where you reference this key. (e.g. id_rsa_gitclass)</li>
+</ol>
+
+
+<h2 id="generate">Generate a new SSH key</h2>
+Taken from <a href="https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">
+	https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a>
+<ol>
+<li>Open Git Bash (or <a href="https://www.idownloadblog.com/2019/04/19/ways-open-terminal-mac/">Terminal</a> if on Mac). Paste the text below, substituting in your email address.  This creates a new ssh key, using the provided email as a label.
+		<div class="example">ssh-keygen -t rsa -b 4096 -C "your_email@example.com"</div>
+	 Response:  <div class="example"> > Generating public/private rsa key pair.</div></li>	
+
+<li>When you're prompted to "Enter a file in which to save the key," press Enter. <br/>This accepts the default file location.<br>
+		Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa): [Press enter]</li>
+<li>At the prompt, type a secure passphrase.   Remember this passphrase as you will be asked to enter it often.  You will not see the characters as you type.
+  <ul>
+		<li>Enter passphrase (empty for no passphrase): [Type a passphrase]
+		</li>
+		<li>
+				Enter same passphrase again: [Type passphrase again]
+		</li>
+	</ul>
+
+</li>
+</ol>
+
+<h2>Add your SSH key to the SSH-Agent</h2>
+<p>Taken from <a href="https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">
+	https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent</a></p>
+<p><Before adding a new SSH key to the ssh-agent to manage your keys, you should <a href="#check">check</a> 
+for existing SSH keys and make sure you’ve generated a new key.</p>
+<ol>
+  <li>Ensure the ssh-agent is running.  It most likely is. Type:
+    <div class="example">eval $(ssh-agent -s)</div>
+		 Response should look something like:
+		 <div class="example">> Agent pid 59566</div>
+		 If so, it's running.
+	</li>
+	 <li>Add your SSH private key to the ssh-agent. Type:</li>
+	 <div class="example">ssh-add ~/.ssh/id_rsa</div>
+
+</ol>
+
+
+<h2 id="copy">
+		Copy Your SSH Key to add it to GitHub
+</h2>
+<p>First, you need a Github account.  If you already have one, skip down to item 7.
+	<ol>
+<li>Go to <a href="http://github.com">http://github.com</a>
+		<li>2.	Create an account
+<ul><li>Select the free account unless you want a paid account</li></ul></li>
+<li>Once you have your Github account set up, go to your account settings, in the upper-right hand corner of the page and choose Settings</li>	
+<li>On the left-side menu, choose SSH and GPG keys</li>
+<li>Click the green ‘New SSH Key’ button</li>
+<li>Type a title for your key.  It can be anything you want to help identify this key.  (Project name, computer name where key lives, etc.)</li>	
+<li>Copy the SSH key you created:</li>	
+<ul><li>On Windows type:
+		<span class="inline-example">clip < ~/.ssh/id_rsa.pub</span></li>
+<li>On MacOS type:
+		<span class="inline-example">pbcopy < ~/.ssh/id_rsa.pub</span></li></ul>
+</li>
+<li>	Paste your SSH Key into the Key section of Github and Save.  
+	Your key should end with the email address you entered when you first created your key
+	</li>
+</ol>
+Test your SSH Key
+In Git Bash or <a href="https://www.idownloadblog.com/2019/04/19/ways-open-terminal-mac/">Terminal</a> if on Mac), type:
+<div class="example">	ssh -T git@github.com</div>
+
+You’ll receive a response:
+<div class="example">> The authenticity of host ‘github.com . . . . .. 
+	RSA key fingerprint is . . . . Are you sure you want to continue connection (yes/no)?
+	</div>
+
+Type:  yes<br/>
+You should receive a response:
+<div class="example">> Hi <username> You’ve successfully authenticated, but Github does not provide shell access.</div>
+
+And that's it! You are ready for class. If you have any questions, please <a href="index.html#contact">contact us.</a>
+
+
+
+
+
+
+
+    </div>  
+</body>
+</html>		

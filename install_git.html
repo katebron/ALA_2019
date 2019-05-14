@@ -2,6 +2,7 @@
 <title>Beginning Git & GitHub</title>
 
 <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="gtk_style/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <link href="gtk_stlye/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
   <!--[if IE]>
@@ -9,7 +10,10 @@
       -->
 	</head>
 	<body class="install">
-		<div id="nav"><a href="index.html">Back to "Beginning Git & GitHub": Home</a></div>
+		<div id="nav"><ul class="no-bullets">
+			<li><a href="index.html">Back to "Beginning Git & GitHub": Home</a></li>
+			<li><a href="prep.html">Back to Preparing for the workshop</a></li>
+		</ul></div>
 		<h1 id="header">Installation</h1>
 		<div id="main">
 			<!--<ol>
@@ -170,74 +174,9 @@
 
     <h3 id="other">Install Git on Other Platforms</h3>
     <p>So you're not using Windows or Mac? Try <a href="https://git-scm.com/download/">git-scm/downloads</a> for your OS and follow instructions from there.</p>    
-
-<h2 id="key">Set up an SSH key to authenticate with GitHub</h3>
-        <p>If you run the following command, it will create a key on your computer. <span class="note"> If you think you already have a key, you can run ls -al ~/.ssh to see if it's there - if it is, skip to the <a href="#copy">copying step</a></span>.</p>
-        	<div class="example">
-        		ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-        	</div>
-        	<p>Click enter to accept the defaults. If you choose to use a passphrase, keep it short! You should see a statement about your public information and key being saved.</p>
-        	<p>The next step is to copy this information so you can paste it into your GitHub account settings. Because of the nature of the key, you'll probably want to use a special command to copy the key (as opposed to opening up the document in a text editor and copying it from there).
-        		<h4 id="copy">Copying on a Mac</h4>
-        		<div class="example">
-        			pbcopy < ~/.ssh/id_rsa.pub
-        		</div>
-        	<h4>Copying on a PC</h4>
-        	<div class="example">
-			  clip < ~/.ssh/id_rsa.pub
-			</div> 
-
-           <p class="note">If "clip" doesn't work on your PC, try: <strong>cat ~/.ssh/id_rsa.pub</strong></p>
-           <h4>Paste your key into your GitHub settings</h4>
-           <p>The last step in authenticating with GitHub is to log in to GitHub, go to your settings page (to do this, click on your profile picture and select "Settings from the drop down menu"). Once you're on the settings page, click "SSH Keys" on the left-hand menu, then "Add SSH key".</p>  
-          
-         <p class="note">Is this step not working well for you? You can try another way to authenticate: See <a href="https://help.github.com/articles/caching-your-github-password-in-git/">GitHub instructions for authenticating through https and a credential tool</a>.</p>
-<!---
-<h2 id="practice">Practice Git</h2>
-
-<h3>Fork & clone a repository</h3>
-<p>Visit GitHub and fork our repository at <a href="https://github.com/hklish01/gettingtoknowgit">https://github.com/hklish01/gettingtoknowgit</a>. <span class="note">You can of course clone whatever repository you'd like, but for the purpose of this practice, go ahead and fork ours.</span></p>
-<img class="screen_shot" alt="screenshot with fork button pointed to" src="images/ghFork.jpg"/>
-<p>Go to the forked copy of the repository, and grab the code to clone it (if you've set up your SSH key, get the SSH address).</p>
-<img class="screen_shot" alt="screenshot with clone url pointed to" src="images/ghClone.jpg"/>
-
-<p>On your local computer, go to a directory where you don't mind having a practice file. If you're on a PC, do this within the Git Bash application.
-<div class="example">Mkdir new_folder</div>
-Move into that folder:
-<div class="example">cd new_folder</div>
- Here you can put in the following command, making sure to change the name of the URL to make it yours:
-  <div class="example">
-    git clone git@github.com:<span class="note">yourgithubusername</span>/gettingtoknowgit.git
-  </div>
-  <div>Git will put the project into a new folder called gettingtoknowgit. You can also have Git call it a different name by saying git clone <span class="note">http://thegitrepoaddress different_folder_name</span>.
-<h3>Make a change to your repository</h3>
- <p>Make a change to a file - Make any of the proposed additions below:
-<ul>
-<li>Add information about banned books to the banned_book.txt file.</li>
-<li>Add a banned book to this same file.</li>
-<li>Add a library name and link to the libraries_info.txt file</li>
-<li>Add a file with a different type of information about banned books (perhaps a list of banned book events?)
-<li>Add and commit your changes, then push them back to your repository on GitHub. Issue a pull request to the original repository. </li>
-</ul>
-<h3>Commit your changes</h3>
-Once you've made a change, run <strong>git status</strong> to see what's changed in your repository.
-To commit your changes - remember that it's a two step process:
-<ol>
-  <li>Stage the files by <strong>git add .</strong> <span class="note"> The dot says take everything that's changed. You have to be at the root of your directory to see all the changes you've made. Git only sees what's in the current directory.</span></li>
-  <li>Commit the files by <strong>git commit -m "<em>note about your change</em>"</strong>. <span class="note">Remember to leave a note about the changes</note>
- </ol> 
- <p>Run git status again to make sure you committed all the files you want. Run <strong>git log</strong> to see a history of commits. Notice that this contains commits from before you forked the project.</p>
-<h3>Push your updated repository up to GitHub</h3>
- <p>Know push to your github repository. Just for the sake of knowing you can, take a look at the address you'll be pushing to:
- <div class="example">
- git remote -v
- </div>
- <p>You should see the Git address for your repository. You can push to multiple locations. The default one is called "origin". So to push your repository back up to your GitHub account:
- <div class="example">
-git push master origin
- </div>  
-<h3>What else?</h3>
-<p>You now know some basics of working with Git! It'll be easier to learn from here. You may want to practice with branches and merging. See our <a href="resources.html">resources page</a> for further tutorials and help.</p>-->
-    </div>  
+		<h2>Next Steps</h2>
+		<p><a href="ssh_keys.html">Set up an SSH Key</a> and connect your computer to GitHub</p>
+		</div>  
+		
 </body>
 </html>		
