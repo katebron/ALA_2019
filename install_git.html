@@ -138,7 +138,7 @@
 <p>After the class, if you want to change from Nano to using Notepad ++ as your text editor, see <a href="https://www.toolsqa.com/git/set-up-notepad-for-git-bash/">these instructions</a>. 
  
 </p>
-<p>OK, Windows user, you're done with installation. We'll practice git in the workshop.</p>
+<p>OK, Windows user, you're done with installation. Now <a href="#config">set up some basic configuration</a>.</p>
 
 
         <h3 id="mac">Install Git on a Mac</h3>
@@ -172,13 +172,27 @@
 
 
         	
-        <p>You're ready to start working with Git on your computer!<!-- One last thing, though - you'll want to <a href="#key">set up a SSH key</a> on your computer and add that to your GitHub account. That way you can push and pull projects between your computer and GitHub with ease.</p>-->
+        <p>Git is now installed! Now you just need to <a href="#config">set up some basic configuration</a>.</p>
 
     <h3 id="other">Install Git on Other Platforms</h3>
     <p>So you're not using Windows or Mac? Try <a href="https://git-scm.com/download/">git-scm/downloads</a> for your OS and follow instructions from there.</p>    
-		<h2>Next Steps</h2>
-		<p><a href="ssh_keys.html">Set up an SSH Key</a> and connect your computer to GitHub</p>
-		</div>  
 		
+		<h2 id ="config">Configure Git</h2>	
+		<p>You can put in some configurations now - 
+			these will be added to every project you start on your computer. <br/>
+			Open up Git Bash (if you're on PC), or your Terminal (if you're on mac) and 
+	     run the following 2 commands (remember to swap out "<em>your name</em>" and "<em>your email address</em>" with your own relevant info).
+				<div class="example">
+				git config --global user.name "your name"
+			</div>
+			<div class="example">
+				git config --global user.email "your email address"
+			</div>
+			<h2>Next Steps</h2>
+			<p><a href="ssh_keys.html">Set up an SSH Key</a> and connect your computer to GitHub</p>
+
+		</div>  
+
+
 </body>
 </html>		
